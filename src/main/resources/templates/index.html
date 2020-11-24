@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TotallyNotAScamEmail</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet"
+          th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+    <h1 align="center"> Totally Not A Scam Email</h1>
+
+    <div>
+        <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+            <label>User Email</label>
+            <input type="text" th:field="*{email}">
+
+            <label>Password</label>
+            <input type="password" th:field="*{password}">
+
+            <input type="submit" name="sendLogin" value="Log-In">
+        </form>
+
+    </div>
+
+</body>
+</html>
