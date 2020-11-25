@@ -1,24 +1,26 @@
-package Controller;
+package com.Controller;
 
-import DTO.Login;
-import Service.UserService;
+import com.DTO.Login;
+import com.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @GetMapping
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping("/")
     public String startingPoint(Model model){
-        System.out.println("Aca");
+        model.addAttribute("login", new Login());
         return "index";
     }
 
