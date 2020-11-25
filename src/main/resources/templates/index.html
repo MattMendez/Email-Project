@@ -13,11 +13,16 @@
 
     <div>
         <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+
             <label>User Email</label>
-            <input type="text" th:field="*{email}">
+            <label>
+                <input type="text" id="email" name="email" th:field="*{email}">
+            </label>
 
             <label>Password</label>
-            <input type="password" th:field="*{password}">
+            <label>
+                <input type="password"  th:field="*{password}">
+            </label>
 
             <input type="submit" name="sendLogin">
         </form>

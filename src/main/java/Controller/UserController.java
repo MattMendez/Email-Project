@@ -16,9 +16,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/index")
+    @GetMapping
     public String startingPoint(Model model){
-        return "test";
+        System.out.println("Aca");
+        return "index";
     }
 
     @PostMapping("/login")
