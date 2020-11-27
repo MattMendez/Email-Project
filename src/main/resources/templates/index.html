@@ -12,20 +12,29 @@
     <h1 align="center"> Totally Not A Scam Email</h1>
 
     <div>
-        <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+        <form class="form-horizontal" action="#" th:action="@{/login}" th:object="${login}" method="post">
 
-            <label>User Email</label>
-            <label>
-                <input type="text" id="email" name="email" th:field="*{email}">
-            </label>
+            <div>
+                <label class="col-sm-2 control-label" >User Email</label>
+                <label>
+                    <input class="form-control" type="text" id="email" name="email" th:field="*{email}">
+                </label>
+            </div>
 
-            <label>Password</label>
-            <label>
-                <input type="password"  th:field="*{password}">
-            </label>
+            <div>
+                <label class="col-sm-2 control-label" >Password</label>
+                <label>
+                    <input class="form-control" type="password"  th:field="*{password}">
+                </label>
+            </div>
 
-            <input type="submit" name="sendLogin">
+            <input class="btn btn-primary" type="submit"  name="sendLogin">
         </form>
+
+        <div>
+            <a type="button" class="btn btn-warning" th:href="@{/register}" methods="get"> New to be scam? </a>
+        </div>
+
 
     </div>
 
